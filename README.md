@@ -69,3 +69,4 @@ Query SQL Join;
   JOIN `courses` ON `courses`.`id` = `exams`.`course_id`
   GROUP BY `courses`.`id`,`students`.`id`
   ORDER BY `students`.`name`, `students`.`surname` ASC
+ 
