@@ -1,3 +1,5 @@
+Per Leggere meglio leggerlo in "source blob"
+
 Query SQL
 
 1) SELECT * FROM `students` WHERE YEAR(`date_of_birth`) = 1990;
