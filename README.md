@@ -50,10 +50,9 @@ Query SQL Join;
   JOIN `courses` ON `courses`.`degree_id` = `degrees`.`id`
   JOIN `course_teacher` ON `course_teacher`.`course_id` = `courses`.`id` 
   JOIN `teachers` ON `course_teacher`.`teacher_id` = `teachers`.`id` 
-  ORDER BY `degrees`.`name` 
-  ASC;
+  ORDER BY `degrees`.`name` ASC;
 
-6)insegnati nel dipartimento di matematica:
+6) insegnati nel dipartimento di matematica:
   SELECT DISTINCT `teachers`.`name`,`teachers`.`surname`,`departments`.`name`,`teachers`.`id`
   FROM `departments` 
   JOIN `degrees` ON `degrees`.`department_id` = `departments`.`id` 
@@ -61,5 +60,5 @@ Query SQL Join;
   JOIN `course_teacher` ON `course_teacher`.`course_id` = `courses`.`id` 
   JOIN `teachers` ON `teachers`.`id` = `course_teacher`.`teacher_id` 
   WHERE `departments`.`name` LIKE '%Matematica'
-  
-  
+
+ 
