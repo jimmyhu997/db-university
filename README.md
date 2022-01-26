@@ -61,4 +61,11 @@ Query SQL Join;
   JOIN `teachers` ON `teachers`.`id` = `course_teacher`.`teacher_id` 
   WHERE `departments`.`name` LIKE '%Matematica'
 
- 
+7) Studenti e Tutti i tentivi per ogni esame:
+  SELECT `students`.`name`,`students`.`surname`,`courses`.`name` AS 'Corso',COUNT(`exams`.`id`) AS 'Tentativi'
+  FROM `students`
+  JOIN `exam_student` ON `exam_student`.`student_id` = `students`.`id`
+  JOIN `exams` ON `exams`.`id` = `exam_student`.`exam_id`
+  JOIN `courses` ON `courses`.`id` = `exams`.`course_id`
+  GROUP BY `courses`.`id`,`students`.`id`
+  ORDER BY `students`.`name`, `students`.`surname` ASC
